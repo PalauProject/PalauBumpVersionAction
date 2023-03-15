@@ -31,7 +31,7 @@ async function run() {
         fs.writeFileSync("./package.json", JSON.stringify(newPackage, null, 2));
 
         core.setOutput("new_version", newVersion);
-
+        console.log(`New version: ${newVersion}`);
     } catch (error) {
     core.setFailed(error.message);
     }
