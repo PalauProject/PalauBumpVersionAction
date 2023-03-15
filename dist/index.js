@@ -74,9 +74,10 @@ async function run() {
         const bumpPatch = core.getInput("patch") === "true";
         const bumpMinor = core.getInput("minor") === "true";
         const bumpMajor = core.getInput("major") === "true";
-        console.log(`Bumping ${{bumpPatch, bumpMinor, bumpMajor}}`);
+        console.log(`Bumping ${JSON.stringify({bumpPatch, bumpMinor, bumpMajor})}`);
     
         const package = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+        console.log(Object.keys(package));
         if (package.version) {
             const [patch, minor, major] = parseVersion(package.version);
         }
