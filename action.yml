@@ -1,0 +1,21 @@
+name: "Bump version"
+description: "Bump version number in package.json"
+inputs:
+  patch:
+    description: "Bump patch version"
+    required: false
+    default: "false"
+  minor:
+    description: "Bump minor version"
+    required: false
+    default: "false"
+  major:
+    description: "Bump major version"
+    required: false
+    default: "false"
+outputs:
+  new_version:
+    description: "New version number"
+runs:
+  using: "node16"
+  main: "index.js"
