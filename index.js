@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const fs = require('fs');
 
-function parseVersion() {
+function parseVersion(version) {
     const match = version.match(/^[0-9]+.[0-9]+.[0-9]+$/);
     if (match) {
         return match[0].split('.');
