@@ -24,7 +24,7 @@ The new version number.
 ## Example usage
 
 ```yaml
-uses: PalauProject/PalauBumpVersionAction
-with:
+- uses: PalauProject/PalauBumpVersionAction@v1.0
+  with:
   minor: "true"
 ```
