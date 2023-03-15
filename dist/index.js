@@ -2846,14 +2846,14 @@ function parseVersion(version) {
 
 async function run() {
     try {
-        let [patch, minor, major] = [0, 0, 0];
+        let [major, minor, patch] = [0, 0, 0];
         const bumpPatch = core.getInput("patch") === "true";
         const bumpMinor = core.getInput("minor") === "true";
         const bumpMajor = core.getInput("major") === "true";
     
         const package = JSON.parse(fs.readFileSync("./package.json", "utf8"));
         if (package.version) {
-            [patch, minor, major] = parseVersion(package.version);
+            [major, minor, patch] = parseVersion(package.version);
         }
         
         const newPatch = (bumpMajor || bumpMinor) ? 0 : bumpPatch ? patch + 1 : patch;
