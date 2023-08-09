@@ -2847,14 +2847,17 @@ function parseVersion(version) {
 async function run() {
     try {
         let newVersion = core.getInput("new_version");
+        const package = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+        
+        console.log(`Current package version number: ${package.version}`)
         console.log(`Provided new version number: ${newVersion}`);
+
         if (!parseVersion(newVersion)) {
             let [major, minor, patch] = [0, 0, 0];
             const bumpPatch = core.getInput("patch") === "true";
             const bumpMinor = core.getInput("minor") === "true";
             const bumpMajor = core.getInput("major") === "true";
         
-            const package = JSON.parse(fs.readFileSync("./package.json", "utf8"));
             if (package.version) {
                 [major, minor, patch] = parseVersion(package.version);
             }
