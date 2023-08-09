@@ -3,6 +3,10 @@ This action bumps the version number in package.json
 
 ## Inputs
 
+### `new_version`
+
+**Optional** Specify version directly. Default `""`.
+
 ### `patch`
 
 **Optional** Bump patch version. Default `"false"`.
