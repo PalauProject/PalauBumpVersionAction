@@ -13,6 +13,7 @@ function parseVersion(version) {
 async function run() {
     try {
         let newVersion = core.getInput("new_version");
+        console.log(`Provided new version number: ${newVersion}`);
         if (!parseVersion(newVersion)) {
             let [major, minor, patch] = [0, 0, 0];
             const bumpPatch = core.getInput("patch") === "true";
@@ -34,7 +35,7 @@ async function run() {
         fs.writeFileSync("./package.json", JSON.stringify(newPackage, null, 2));
 
         core.setOutput("new_version", newVersion);
-        console.log(`New version: ${newVersion}`);
+        console.log(`Updated to version: ${newVersion}`);
     } catch (error) {
     core.setFailed(error.message);
     }
