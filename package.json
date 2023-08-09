@@ -2,7 +2,7 @@
   "name": "palaubumpversionaction",
   "version": "1.0.0",
   "description": "Bump version in package.json",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
