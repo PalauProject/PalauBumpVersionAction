@@ -1,6 +1,10 @@
 name: "Bump version"
 description: "Bump version number in package.json"
 inputs:
+  new_version:
+    description: "Set version number directly"
+    required: false
+    default: ""
   patch:
     description: "Bump patch version"
     required: false
